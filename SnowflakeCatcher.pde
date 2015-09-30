@@ -4,7 +4,7 @@ void setup()
 {
   //your code here
   background(0);
-  size(300,300);
+  size(500,500);
   snow = new Snowflake[30];
 
   for(int i = 0; i< snow.length; i++){
@@ -41,8 +41,8 @@ class Snowflake
   Snowflake()
   {
     //class member variable initializations
-    x = (int)(Math.random()*300);
-    y = (int)(Math.random()*300);
+    x = (int)(Math.random()*500);
+    y = (int)(Math.random()*500);
     isMoving = true;
   }
   void show()
@@ -56,7 +56,7 @@ class Snowflake
   void lookDown()
   {
     //your code here
-    if((y < 300 && y> 0) && (get(x,y) != color(0))){
+    if((y <= 490 && y >= 490) && (get(x,y+5) != color(0))){
       isMoving = false;
     }
     else{
@@ -67,6 +67,7 @@ class Snowflake
   void erase()
   {
     //your code here
+    noStroke();
     fill(0);
     ellipse(x,y,7,7);
 
@@ -81,9 +82,9 @@ class Snowflake
   void wrap()
   {
     //your code here
-    if(y >300){
+    if(y >500){
       y = 0;
-      x = (int)(Math.random()*300);
+      x = (int)(Math.random()*500);
     }
 
   }
